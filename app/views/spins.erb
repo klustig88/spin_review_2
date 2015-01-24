@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>    
+  <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sample Page</title>
+    <!-- <link rel="stylesheet" href="foundation.css" /> -->
+
+  <script src="/magic360/magic360.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="/magic360/magic360.css">
+
+
+    <!-- Start of Async HubSpot Analytics Code -->
+ 
+  <!-- End of Async HubSpot Analytics Code -->
+</head>
+<body>
+
+  <div class="header">
+
+      <a href="http://www.snap36.com"><img src="http://cdn2.hubspot.net/hub/29492/file-705818670-jpg/TradeShows/IR_B2B/landingpagehead.jpg"></a>
+    
+  </div>
+  
+  <% Dir.foreach('/Users/DeltaTauChi/Desktop/proofing_code/public/img') do |item|
+  next if item == '.' or item == '..' or item == '.DS_Store' %>
+  
+  
+
+
+
+       <div class="viewer">
+        <a href="/img/<%= item %>/<%= item %>-big-01-01.jpg" class="Magic360" data-magic360-options="columns: 12; rows: 3; filename: <%= item %>-small-{row}-{col}.jpg"; large-filename: "<%= item %>-big-{row}-{col}.jpg;" ><img src="/img/<%= item %>/<%= item %>-small-01-01.jpg"/></a> 
+
+
+       </div> 
+
+
+
+  <% end %>
+
+   
+  <div class="footer">
+
+      <img src="http://cdn2.hubspot.net/hub/29492/file-704215607-png/Banners/WeGetAround.png?t=1407167395510">
+    
+  </div>
+
+  
+
+</body>
+</html>

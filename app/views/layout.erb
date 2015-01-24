@@ -7,6 +7,11 @@
     See: http://necolas.github.com/normalize.css/
   -->
   <link rel="stylesheet" href="/css/normalize.css">
+
+
+  <!-- Magic360 -->
+  <!-- <link rel="stylesheet" type="text/css" href="/css/magic360.css"> -->
+
   <!--
     application.css is where you put your styles
   -->
@@ -22,13 +27,8 @@
 <body>
 <div id="content">
   <header>
-    <a href="/"><img src="/img/zenchinese.png" class="logo"></a>
-    <div id="login-toolbar">
-      <% if current_user %>
-        <a href="/logout">Logout</a>
-      <% else %>
-        <a href="/login">Login</a>
-      <% end %>
+   
+    
   </header>
   <%= yield %>
 </div>
