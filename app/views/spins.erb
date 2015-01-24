@@ -22,7 +22,7 @@
     
   </div>
   
-  <% Dir.foreach('https://fathomless-escarpment-8965.herokuapp.com/img') do |item|
+  <% Dir.foreach('/img') do |item|
   next if item == '.' or item == '..' or item == '.DS_Store' %>
   
   
@@ -30,7 +30,7 @@
 
 
        <div class="viewer">
-        <a href="https://fathomless-escarpment-8965.herokuapp.com/img/<%= item %>/<%= item %>-big-01-01.jpg" class="Magic360" data-magic360-options="columns: 12; rows: 3; filename: <%= item %>-small-{row}-{col}.jpg"; large-filename: "<%= item %>-big-{row}-{col}.jpg;" ><img src="https://fathomless-escarpment-8965.herokuapp.com/img/<%= item %>/<%= item %>-small-01-01.jpg"/></a> 
+        <a href="/img/<%= item %>/<%= item %>-big-01-01.jpg" class="Magic360" data-magic360-options="columns: 12; rows: 3; filename: <%= item %>-small-{row}-{col}.jpg"; large-filename: "<%= item %>-big-{row}-{col}.jpg;" ><img src="h/img/<%= item %>/<%= item %>-small-01-01.jpg"/></a> 
 
 
        </div> 
