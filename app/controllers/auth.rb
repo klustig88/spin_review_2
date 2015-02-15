@@ -28,7 +28,28 @@ get '/spins' do
 
 erb :spins
 
+@spins = Spin.all
+
  # @images = Dir["/Macintosh HD/Users/DeltaTauChi/Desktop/proofing_code/public"]
+
+end
+
+
+
+get '/upload'  do
+
+   erb :upload
+
+end
+
+
+post '/upload' do
+
+   # @project = Upload.new(params[:create_project])
+   # @project.save
+ 
+  erb :success
+
 
 end
 
@@ -56,4 +77,7 @@ post '/admin/login' do
 "
   end
 end
+
+
+
 
