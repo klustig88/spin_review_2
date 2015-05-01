@@ -1,3 +1,3 @@
-class Upload < ActiveRecord::Base
+class Client < ActiveRecord::Base
   # Remember to create a migration!
 end

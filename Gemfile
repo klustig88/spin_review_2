@@ -12,6 +12,9 @@ gem 'sinatra-contrib'
 gem 'activesupport', '~>4.1'
 gem 'activerecord', '~>4.1'
 gem 'bcrypt-ruby'
+gem 'will_paginate', '~> 3.0.5'
+gem 'thin', '~> 1.6.3'
+gem 'rack', '1.5.2'
 
 gem 'rake' 
 

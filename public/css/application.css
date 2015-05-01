@@ -1,5 +1,5 @@
 /* CSS declarations go here */
-body {font-family: Vollkorn; font-size: 160%; line-height: 160%; }
+body {font-family: Helvetica; font-size: 140%; line-height: 160%; }
 h1, h2, h3, h4, h5, h6 {font-family: Georgia; line-height:100%; margin-top: 0.5em; margin-bottom: 0.5em; color: #36AECC; font-style: italic; font-weight: 400;}
 h1 {font-size: 1.8em;}
 h2 {font-size: 1.6em;}
@@ -28,7 +28,11 @@ del {text-decoration: line-through; color: #777777;}
 
 footer { font-size: 0.7em; margin-top: 2em;}
 
-#content { margin: 0 auto; padding: 0 1em; max-width: 37em; position: relative; width: 61.8%;}
+/*#content { margin: 0 auto; padding: 0 1em; max-width: 37em; position: relative; width: 100%;}*/
+#content {
+    width: 70%;
+    margin: auto;
+}
 
 a {
     color: #36AECC;
@@ -64,4 +68,235 @@ code {
     line-height: 1.4em;
     margin-left: -1em;
     overflow: auto;
+}
+
+.outline {
+
+    width: 40%;
+    border-style: solid;
+
+    margin-top: 5%;
+    margin-right: 20%;
+    margin-left: 30%;
+    display: inline-block;
+    border-radius: 25px;
+}
+
+.viewer {
+
+    margin-right: 5%;
+    margin-left: 5%;
+    width: 40%;
+}
+.viewer img{
+
+
+    width: 40%;
+}
+
+.decision {
+
+    
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+#next {
+
+    float: right;
+    margin-right: 5%
+}
+
+.direction {
+    padding-top: 5%;
+}
+
+
+.navigation div {
+    display: inline-block;
+    color: white;
+    background-color: black;
+    margin-bottom: 5%;
+    border-radius: 25px;
+    text-align: center;
+    width: 18%;    
+
+}
+
+.navigation p {
+    display: inline-block;
+    color: yellow;
+    background-color: black;
+    margin-bottom: 5%;
+    border-radius: 25px;
+    text-align: center;
+    width: 18%;    
+
+}
+
+
+.navigation div:hover {
+    display: inline-block;
+    color: yellow;
+    background-color: black;
+    margin-bottom: 5%;
+    border-radius: 25px;
+    text-align: center;
+    width: 18%;    
+
+}
+.navigation {
+    margin-left: 15%;
+    margin-right: 25%;
+    display: inline-block;
+    background-color: white;
+    width: 75%;
+}
+
+.navigation img {
+    width: 15%;
+    height: 15%;
+}
+
+.gallery {
+    display: block;
+    border-style: solid;
+    width: 40%;
+}
+
+.galleryspin {
+    margin-left: 25%;
+}
+
+.comments {
+
+    margin-left: 25%;
+    margin-bottom: 25%;
+
+}
+
+#comment-box {
+    border-style: solid;
+    border-radius: 25px;
+    width:  80%;
+    height: 60%;
+    overflow: auto;
+}
+
+.findsearch {
+    margin-left: 10%;
+}
+
+.findbutton {
+
+    margin-left: 33%;
+}
+
+.viewercontainer div{
+    display: inline-block;
+}
+
+.viewercontainer{
+    display: inline-block;
+}
+
+.comment input, .comment textarea {
+    border: 4px solid rgba(0,0,0,0.1);
+    padding: 8px 10px;
+    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    
+    outline: 0;
+}
+
+.comment textarea {
+    width: 350px;
+}
+
+.comment input[type="submit"] {
+    cursor: pointer;
+    background: -webkit-linear-gradient(top, #efefef, #ddd);
+    background: -moz-linear-gradient(top, #efefef, #ddd);
+    background: -ms-linear-gradient(top, #efefef, #ddd);
+    background: -o-linear-gradient(top, #efefef, #ddd);
+    background: linear-gradient(top, #efefef, #ddd);
+    color: #333;
+    text-shadow: 0px 1px 1px rgba(255,255,255,1);
+    border: 1px solid #ccc;
+}
+
+.comment input[type="submit"]:hover {
+    background: -webkit-linear-gradient(top, #eee, #ccc);
+    background: -moz-linear-gradient(top, #eee, #ccc);
+    background: -ms-linear-gradient(top, #eee, #ccc);
+    background: -o-linear-gradient(top, #eee, #ccc);
+    background: linear-gradient(top, #eee, #ccc);
+    border: 1px solid #bbb;
+}
+
+.comment input[type="submit"]:active {
+    background: -webkit-linear-gradient(top, #ddd, #aaa);
+    background: -moz-linear-gradient(top, #ddd, #aaa);
+    background: -ms-linear-gradient(top, #ddd, #aaa);
+    background: -o-linear-gradient(top, #ddd, #aaa);
+    background: linear-gradient(top, #ddd, #aaa);   
+    border: 1px solid #999;
+}
+
+.comment div {
+    margin-bottom: 8px;
+}
+
+#commentbutton {
+    margin-left: 5%
+}
+
+#hidecomments {
+    margin-left: 5%
+}
+
+#spinstills div{
+    display: inline;
+
+}
+
+body button, #submit{
+  background: #f7ff00;
+  background-image: -webkit-linear-gradient(top, #f7ff00, #000000);
+  background-image: -moz-linear-gradient(top, #f7ff00, #000000);
+  background-image: -ms-linear-gradient(top, #f7ff00, #000000);
+  background-image: -o-linear-gradient(top, #f7ff00, #000000);
+  background-image: linear-gradient(to bottom, #f7ff00, #000000);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+body button:hover, #submit:hover{
+  background: #000000;
+  text-decoration: none;
+}
+
+#center {
+    text-align: center;
+
+    width: 100%;
+}
+
+#centerstill {
+   text-align: center;
+   width: 100%;
+   float: left;
+}
+
+#stillimage img{
+    margin-left: 20%;
+    margin-right: 15%;
 }
