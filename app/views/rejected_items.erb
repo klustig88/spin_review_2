@@ -67,10 +67,10 @@
 
 		<div class="navigation">
 	    
-	    <a href="/approveditems/0"><div>Approved</div></a>
+	    <a href="/spins/0"><div>Full Gallery</div></a>
+      <a href="/approveditems/0"><div>Approved</div></a>
 	    <p>Rejected</p>
 	    <a href="/notreviewed/0"><div>Not Reviewed</div></a>
-	    <a href="/spins/0"><div>Full Gallery</div></a>
       <a href="/find"><div>Find By ID</div></a>
     </div>
 	  <br>
@@ -162,7 +162,7 @@
                   <input type="submit" value="Submit">
                 </div>
           </form>
-        </div>
+        
   
 		<br>
 
@@ -175,10 +175,7 @@
             <div>
             <div>Comments for <%= item.name %></div>
             
-            <textarea name="comment[]" ROWS="3" COLS="25">
-
-
-            </textarea>
+            <textarea rows="10" name="comment" id="comment" placeholder="Comment"></textarea>
           </div>
 
 
@@ -211,6 +208,8 @@
 
 
         </div>
+
+     </div>
 
 
      <% end %>

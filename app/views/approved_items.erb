@@ -67,10 +67,10 @@
 		<div class="navigation">
 	    
 
-		    <p>Approved</p>
+		    <a href="/spins/0"><div>Full Gallery</div></a>
+        <p>Approved</p>
 		    <a href="/rejecteditems/0"><div>Rejected</div></a>
 		    <a href="/notreviewed/0"><div>Not Reviewed</div></a>
-        <a href="/spins/0"><div>Full Gallery</div></a>
 		    <a href="/find"><div>Find By ID</div></a>
 
 	  </div>
@@ -92,8 +92,10 @@
           
 
       <div class='viewercontainer'>
-        <div align='center'> <%= item.name %></div>
-        <div align='center'> <%= item.id %></div>
+        <div id='center'> <%= item.name %></div>
+   
+
+        <div id='spinstills'>
 
 
         <div class="viewer">
@@ -109,7 +111,7 @@
           <% @stills =  Still.where(:spinname => item.name) %>
           <% @stills.each do |x| %>
 
-          <div id='centerstill'> <%= x.name %></p>
+          <div id='centerstill'> <%= x.name %></p></div>
 
           <div id='stillimage'>
 
@@ -117,9 +119,10 @@
           </div>
 
             <% end %>
+            </div>
           </div>
         </div>
-        </div>
+    
 
 
          
@@ -161,7 +164,7 @@
 
 
 
-	</div>
+	
 
    <div class='comments'>
     <form action="/spins/<%= item.id %>/comments" method="post" name="comments" id='comments'>
@@ -169,20 +172,20 @@
               <div>
               <div>Comments for <%= item.name %></div>
               
-              <textarea name="comment[]" ROWS="3" COLS="25">
+              <textarea rows="10" name="comment" id="comment" placeholder="Comment"></textarea>
 
 
-              </textarea>
+             
             </div>
 
 
 
             
-            <input type='submit'  value='Submit' id='submit'>
+            <input type='submit'  value='Add Comment' id='submit'>
              </form>
 
-           <div id='comment-box' >
-             <% @count = 1  %>
+
+            <% @count = 1  %>
 
             <% @ment = Comment.where(:spinid => item.id)  %>
            
@@ -190,15 +193,27 @@
       
             <% @ment.each do |x| %>
 
-            <text><%= @count %>:<%= x.text %></text>
+            <% if @ment = nil %>
+
+              <div></div>
+
+            
+            <% else %>
+              <div id='comment-box' >
+            
+
+
+              <text><%= @count %>:<%= x.text %></text>
 
              <% @count += 1  %>
 
-            <% end %>
+            
 
 
 
           </div>
+          <% end %>
+            <% end %>
 
 
 
@@ -207,6 +222,7 @@
                      
           </div>
         </div>
+       
            <% end %>
         
           
@@ -242,7 +258,7 @@
         <% end %>
 
       </div>
-      </div>
+</div>
 
 
 

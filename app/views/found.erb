@@ -17,10 +17,10 @@
 
       <div class="navigation">
           
+          <a href="/spins/0"><div>Fully Gallery</div></a>
           <a href="/approveditems/0"><div>Approved</div></a>
           <a href="/rejecteditems/0"><div>Rejected</div></a>
           <a href="/notreviewed/0"><div>Not Reviewed</div></a>
-          <a href="/gallery"><div>Status</div></a>
           <div><b>Find By ID</b></div>
 
 
@@ -30,18 +30,39 @@
 
     	<div class='outline'>
 
-    	
-    			Product Code:  <%= @product.name %>
+    	   <div class='viewercontainer'>
+    			<div id='center'> <%= @product.name %></div>
 
-
+           <div id='spinstills'>
 
              <div class="viewer">
                 <a href="/img/<%= @product.name %>/<%= @product.name %>-big-01-01.jpg" class="Magic360" data-magic360-options="columns: <%= @product.column %>; rows: <%= @product.row %>; filename: <%= @product.name %>-small-{row}-{col}.jpg"; large-filename: "<%= @product.name %>-big-{row}-{col}.jpg;" ><img src="/img/<%= @product.name %>/<%= @product.name %>-small-01-01.jpg"/></a> 
+              </div>
+
+                 <div class='stills'>
+                  <p>Stills</p>
+                    
+
+                    <% @stills =  Still.where(:spinname => @product.name) %>
+                    <% @stills.each do |x| %>
+
+                    <div id='centerstill'> <%= x.name %></div>
+                    <br>
+
+                    <div id="stillimage">
+
+                    <img src="/stills/<%= @product.name %>/<%= x.name %>" height='60%' width='60%'>
+                    </div>
+
+                    <% end %>
+            
+                  </div>
                 
 
              </div> 
+             </div> 
 
-                      <div class='decision'>
+            <div class='decision'>
              <form action="/spins/<%= @product.id %>/approval" method="post" name="decision">
               
 
@@ -72,8 +93,8 @@
              
                 <input type="submit" value="Submit">
                 </form>
-                </div>
             </div>
+      </div>
 
 
 
@@ -82,9 +103,8 @@
 
 
 
-
-    	</div>
-  </div>
+</div>
+ 
 
 </body>
 </html>

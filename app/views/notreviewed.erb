@@ -68,10 +68,10 @@
 
     <div class="navigation">
 	    
-		 	  <a href="/approveditems/0"><div>Approved</div></a>
+		 	  <a href="/spins/0"><div>Full Gallery</div></a>
+        <a href="/approveditems/0"><div>Approved</div></a>
 		    <a href="/rejecteditems/0"><div>Rejected</div></a>
 		    <p>Not Reviewed</p>
-		    <a href="/spins/0"><div>Full Gallery</div></a>
         <a href="/find"><div>Find By ID</div></a>
     </div>
 
@@ -173,20 +173,20 @@
             <div>
             <div>Comments for <%= item.name %></div>
             
-            <textarea name="comment[]" ROWS="3" COLS="25">
+          <textarea rows="10" name="comment" id="comment" placeholder="Comment"></textarea>
 
 
-            </textarea>
-          </div>
+             
+            </div>
 
 
 
-          
-          <input type='submit'  value='Submit' id='submit'>
-           </form>
+            
+            <input type='submit'  value='Add Comment' id='submit'>
+             </form>
 
-           <div id='comment-box' >
-             <% @count = 1  %>
+
+            <% @count = 1  %>
 
             <% @ment = Comment.where(:spinid => item.id)  %>
            
@@ -194,16 +194,28 @@
       
             <% @ment.each do |x| %>
 
-            <text><%= @count %>:<%= x.text %></text>
+            <% if @ment = nil %>
+
+              <div></div>
+
+            
+            <% else %>
+              <div id='comment-box' >
+            
+
+
+              <text><%= @count %>:<%= x.text %></text>
 
              <% @count += 1  %>
 
-            <% end %>
+
+           
 
 
 
           </div>
-
+           <% end %>
+           <% end %>
 
 
 
