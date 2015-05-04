@@ -1,0 +1,15 @@
+ <p>Stills</p>
+                  
+
+                  <% @stills =  Still.where(:spinname => item.name) %>
+                  <% @stills.each do |x| %>
+
+                  <div id='centerstill'> <%= x.name %></div>
+                  <br>
+
+                  <div id="stillimage">
+
+                  <img src="/stills/<%= item.name %>/<%= x.name %>" height='60%' width='60%'>
+                  </div>
+
+                  <% end %>

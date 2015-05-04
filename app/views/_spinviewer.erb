@@ -1,0 +1,13 @@
+    <% @number = params[:splat].first.to_i %>
+   <% @complete =  Spin.where(:id => @number..@number+5).order('id ASC') %>
+   <% @complete.each do |item|
+    next if item == '.' or item == '..' or item == '.DS_Store' %> 
+
+ <div class="viewer">
+                   <p>Spins</p>
+                    <a href="/img/<%= item.name %>/<%= item.name %>-big-01-01.jpg" class="Magic360" data-magic360-options="columns: <%= item.column %>; rows: <%= item.row %>; filename: <%= item.name %>-small-{row}-{col}.jpg"; large-filename: "<%= item.name %>-big-{row}-{col}.jpg;" ><img src="/img/<%= item.name %>/<%= item.name %>-small-01-01.jpg"/></a> 
+                    
+
+     </div> 
+
+     <% end %>

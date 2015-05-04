@@ -10,20 +10,18 @@
   <link rel="stylesheet" type="text/css" href="/magic360/magic360.css">
    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
-
-
-
-</head>
-<body>
-
-
-      <script type="text/javascript">
+   <script type="text/javascript">
           $(document).ready(function(){
+
 
 
             $(".comments").hide();
             $("#hidecomments").hide();
             $("#reasonrejected").hide();
+            $(".stills").hide();
+            $("#spinbutton").hide();
+
+       
 
             $("#commentbutton").click(function() {
               $(".comments").show();
@@ -41,29 +39,64 @@
 
             });  
 
-             var button1 = document.getElementById("rejectedbutton")
-             var button2 = document.getElementById("approvedbutton")
+              $('#stillbutton').click(function() {
+              $(".stills").toggle();
+              $(".viewer").toggle();
+              $("#stillbutton").toggle();
+              $("#spinbutton").toggle();
 
-             if (button1.checked) {
+
+            });  
+
+              
+              $('#spinbutton').click(function() {
+
+
+       
+               $(".viewer").toggle();
+              $(".stills").toggle();
+              $("#spinbutton").toggle();
+              $("#stillbutton").toggle();
+
+            });  
+            });  
+ 
+
+
+             // var button1 = document.getElementById("rejectedbutton")
+             // var button2 = document.getElementById("approvedbutton")
+
+             // if (button1.checked) {
                 
-                $("#reasonrejected").show();
+             //    $("#reasonrejected").show();
 
-             } else if (button2.checked) {
+             // } else if (button2.checked) {
 
-               $("#reasonrejected").hide();
+             //   $("#reasonrejected").hide();
              
-             } else {
+             // } else {
 
-              $("#reasonrejected").hide();
-             }
+             //  $("#reasonrejected").hide();
+             // }
+
+             // });
 
 
 
-            });
+           
 
           
 
           </script>
+
+
+
+
+</head>
+<body>
+
+
+
 
   <div id='content'>
 
@@ -90,6 +123,13 @@
       <button id='commentbutton'>Show Comments</button>
       <button id='hidecomments'>Hide Comments</button>
 
+      <button id='spinbutton'>Spins</button>
+      <button id='stillbutton'>Stills</button>
+
+             
+
+      
+
 
 
    <% @number = params[:splat].first.to_i %>
@@ -102,11 +142,14 @@
    
     <div class='outline'>
     
-    
+      
+
           
 
         <div class='viewercontainer'>
         <div id='center'> <%= item.name %></div>
+ 
+
 
           <div id='spinstills'>
                
@@ -118,23 +161,46 @@
                  </div> 
                 
                 <div class='stills'>
-                <p>Stills</p>
+
+
+                
                   
 
                   <% @stills =  Still.where(:spinname => item.name) %>
                   <% @stills.each do |x| %>
 
+
+
+                  
+
+                  <% if x.spinname =! item.name %>
+
+                  <p>No Stills Available</p>
+                    
+            
+
+                  <% else %>
+
                   <div id='centerstill'> <%= x.name %></div>
-                  <br>
+                    <br>
 
-                  <div id="stillimage">
+                    <div id="stillimage">
 
-                  <img src="/stills/<%= item.name %>/<%= x.name %>" height='60%' width='60%'>
-                  </div>
+                    <img src="/stills/<%= item.name %>/<%= x.name %>" height='60%' width='60%'>
+                    </div>
 
+                        
+
+                  
+
+                  
                   <% end %>
+                  <% end %>
+
                  </div>
+
              </div>
+             
           </div>
 
        
